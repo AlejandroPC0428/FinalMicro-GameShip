@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "author": "dj1420",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 154.2, "left": -51.6, "attrs": {} },
+    { "type": "wokwi-ili9341", "id": "lcd2", "top": -200.8, "left": 479.7, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 44.6,
+      "left": 892.8,
+      "attrs": { "color": "red", "key": "ArrowRight" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 330.35,
+      "left": 652.8,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 35,
+      "left": 748.8,
+      "attrs": { "color": "red", "key": "ArrowLeft" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 311.15,
+      "left": 652.8,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": -41.8,
+      "left": 816,
+      "attrs": { "color": "red", "key": "ArrowUp" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 291.95,
+      "left": 652.8,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 272.75,
+      "left": 652.8,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 102.2,
+      "left": 806.4,
+      "attrs": { "color": "red", "key": "ArrowDown" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn5",
+      "top": -70.6,
+      "left": 355.2,
+      "attrs": { "color": "green", "key": "x" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": -5.65,
+      "left": 288,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 21.6,
+      "left": -84.6,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd2:VCC", "mega:5V", "red", [ "v230.4", "h-355.2" ] ],
+    [ "lcd2:GND", "mega:GND.2", "black", [ "v240", "h-355.2" ] ],
+    [ "mega:6", "lcd2:CS", "green", [ "v-28.8", "h216.4", "v124.8", "h134.4" ] ],
+    [ "mega:7", "lcd2:D/C", "violet", [ "v-38.4", "h236", "v124.8", "h124.8" ] ],
+    [ "mega:11", "lcd2:MOSI", "gold", [ "v-48", "h297.2", "v124.8", "h124.8" ] ],
+    [ "lcd2:SCK", "mega:13", "blue", [ "v19.2", "h-115.21", "v-67.2", "h-9.6" ] ],
+    [ "lcd2:LED", "mega:5V.2", "orange", [ "v0" ] ],
+    [ "lcd2:MISO", "mega:12", "white", [ "v124.8", "h-201.61", "v-124.8", "h-57.6" ] ],
+    [ "lcd2:RST", "mega:10", "green", [ "v48", "h-96", "v-86.4", "h-288" ] ],
+    [ "mega:3.3V", "btn1:1.l", "green", [ "v74.1", "h549.4" ] ],
+    [ "r1:1", "mega:GND.5", "green", [ "h0" ] ],
+    [ "r1:2", "btn1:2.l", "green", [ "v8.4", "h48", "v-249.8" ] ],
+    [ "btn1:2.r", "mega:18", "cyan", [ "h19.4", "v153.8", "h-511.1" ] ],
+    [ "btn2:2.r", "mega:19", "cyan", [ "h-9.4", "v163.4", "h-528" ] ],
+    [ "btn2:2.l", "r2:2", "green", [ "h0" ] ],
+    [ "btn2:1.l", "mega:3.3V", "green", [ "h-38.4", "v374.4", "h-604.8", "v-19.2" ] ],
+    [ "btn3:2.r", "mega:20", "cyan", [ "h0.2", "v249.8", "h-614.4" ] ],
+    [ "btn3:2.l", "r3:2", "green", [ "h-9.6", "v288.2" ] ],
+    [ "btn4:2.r", "mega:21", "cyan", [ "h-19", "v115.4", "h-576" ] ],
+    [ "btn4:2.l", "r4:2", "green", [ "h9.6", "v144.2" ] ],
+    [ "btn4:1.l", "mega:3.3V", "green", [ "h-57.6", "v288", "h-633.6" ] ],
+    [ "btn3:1.l", "mega:3.3V", "green", [ "h0", "v460.8", "h-710.4" ] ],
+    [ "r2:1", "mega:GND.5", "green", [ "v0" ] ],
+    [ "r3:1", "mega:GND.5", "green", [ "v0" ] ],
+    [ "r4:1", "mega:GND.5", "green", [ "v0" ] ],
+    [ "btn5:2.l", "r5:2", "green", [ "h0" ] ],
+    [ "r5:1", "mega:GND.5", "green", [ "v0" ] ],
+    [ "btn5:2.r", "mega:17", "cyan", [ "h0" ] ],
+    [ "btn5:1.l", "mega:3.3V", "green", [ "h0" ] ],
+    [ "bz1:2", "mega:16", "green", [ "v38.4", "h287.6" ] ],
+    [ "bz1:1", "mega:GND.2", "green", [ "v278.4", "h76.8" ] ]
+  ],
+  "dependencies": {}
+}
